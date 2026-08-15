@@ -9,6 +9,7 @@
 <virtualSpnOverride mccmncspn="20408Rabo Mobiel" name="Rabo Mobiel"/>
 <virtualSpnOverride mccmncspn="20412Lebara" name="Lebara"/>
 <virtualSpnOverride mccmncspn="20416Tele2 NL" name="Tele2 NL"/>
+<virtualSpnOverride mccmncspn="20416Odido" name="Odido"/>
 <virtualSpnOverride mccmncspn="20404CNT" name="CNT"/>
 <virtualSpnOverride mccmncspn="20606LycaMobile" name="LycaMobile"/>
 <virtualSpnOverride mccmncspn="20610LYCAMOBILE" name="LYCAMOBILE"/>
@@ -73,6 +74,7 @@
 <virtualSpnOverride mccmncspn="24801diil" name="diil"/>
 <virtualSpnOverride mccmncspn="24801Telia" name="Telia"/>
 <virtualSpnOverride mccmncspn="24802ZEN" name="ZEN"/>
+<virtualSpnOverride mccmncspn="25019Alfa" name="Alfa"/>
 <virtualSpnOverride mccmncspn="25020ROSTELECOM" name="ROSTELECOM"/>
 <virtualSpnOverride mccmncspn="25020SberMobile" name="SberMobile"/>
 <virtualSpnOverride mccmncspn="25020TTK" name="TTK"/>
@@ -132,16 +134,20 @@
 <virtualSpnOverride mccmncspn="334140VALOR" name="VALOR"/>
 <virtualSpnOverride mccmncspn="40177ALTEL 4G" name="ALTEL 4G"/>
 <virtualSpnOverride mccmncspn="40177ALTEL" name="ALTEL"/>
+<virtualSpnOverride mccmncspn="40102Activ" name="Activ"/>
 <virtualSpnOverride mccmncspn="40486VodafoneIdea" name="VodafoneIdea"/>
 <virtualSpnOverride mccmncspn="40449airtel" name="airtel"/>
 <virtualSpnOverride mccmncspn="40444Vi" name="Vi"/>
 <virtualSpnOverride mccmncspn="405799VIL" name="VIL"/>
 <virtualSpnOverride mccmncspn="405852VIL" name="VIL"/>
 <virtualSpnOverride mccmncspn="41003Onic" name="Onic"/>
+<virtualSpnOverride mccmncspn="41405U9" name="U9"/>
+<virtualSpnOverride mccmncspn="41405Ooredoo" name="U9"/>
 <virtualSpnOverride mccmncspn="41866Fastlink" name="Fastlink"/>
 <virtualSpnOverride mccmncspn="42402swyp" name="swyp"/>
 <virtualSpnOverride mccmncspn="42402five" name="five"/>
 <virtualSpnOverride mccmncspn="42501012 Mobile" name="012 Mobile"/>
+<virtualSpnOverride mccmncspn="42901Namaste" name="Namaste"/>
 <virtualSpnOverride mccmncspn="43404OQ" name="OQ"/>
 <virtualSpnOverride mccmncspn="43406PowerTel" name="Perfectum"/>
 <virtualSpnOverride mccmncspn="43407MOBIUZ" name="MOBIUZ"/>
@@ -159,6 +165,7 @@
 <virtualSpnOverride mccmncspn="204048.ta Δ" name="8.ta"/>
 <virtualSpnOverride mccmncspn="46015中国广电" name="中国广电"/>
 <virtualSpnOverride mccmncspn="46013中国广电" name="中国广电"/>
+<virtualSpnOverride mccmncspn="502153UNI5G" name="UNI5G"/>
 <virtualSpnOverride mccmncspn="51011LIVE.ON" name="LIVE.ON"/>
 <virtualSpnOverride mccmncspn="51001ISAT-PEMILUDAMAI" name="Indosat Ooredoo"/>
 <virtualSpnOverride mccmncspn="51502GOMO" name="GOMO"/>
@@ -168,10 +175,12 @@
 <virtualSpnOverride mccmncspn="52017K4" name="K4"/>
 <virtualSpnOverride mccmncspn="52017TOTmobile" name="TOTmobile"/>
 <virtualSpnOverride mccmncspn="60204we" name="we"/>
+<virtualSpnOverride mccmncspn="62130MTN-NG" name="MTN NG"/>
 <virtualSpnOverride mccmncspn="62405blue" name="blue"/>
 <virtualSpnOverride mccmncspn="63903Equitel" name="Equitel"/>
 <virtualSpnOverride mccmncspn="64002TIGO" name="Yas"/>
 <virtualSpnOverride mccmncspn="64002Yas" name="Yas"/>
+<virtualSpnOverride mccmncspn="64002YAS" name="Yas"/>
 <virtualSpnOverride mccmncspn="64003Zantel" name="Yas"/>
 <virtualSpnOverride mccmncspn="65501Mr Price Mobile" name="Mr Price Mobile"/>
 <virtualSpnOverride mccmncspn="65507k&apos;nect mobile" name="k&apos;nect mobile"/>
@@ -213,5 +222,6 @@
 <!-- yj:modify for X6532COP-2163 by linlin.yang 20240927 end -->
 <virtualSpnOverride mccmncspn="74000Tuenti" name="Tuenti"/>
 <virtualSpnOverride mccmncspn="74000MaxiPlus" name="MaxiPlus"/>
+<virtualSpnOverride mccmncspn="74000AkiMovil" name="AkiMovil"/>
 <virtualSpnOverride mccmncspn="99999airtel 5G trial" name="Airtel"/>
 </virtualSpnOverridesByEfSpn>

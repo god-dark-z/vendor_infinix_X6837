@@ -596,6 +596,7 @@ PRODUCT_COPY_FILES += \
     vendor/infinix/X6837/proprietary/vendor/etc/audio_param/SpeechUI_ParamUnitDesc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_param/SpeechUI_ParamUnitDesc.xml \
     vendor/infinix/X6837/proprietary/vendor/etc/audio_param/SpeechVolUI_AudioParam.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_param/SpeechVolUI_AudioParam.xml \
     vendor/infinix/X6837/proprietary/vendor/etc/audio_param/SpeechVolUI_ParamUnitDesc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_param/SpeechVolUI_ParamUnitDesc.xml \
+    vendor/infinix/X6837/proprietary/vendor/etc/audio_param/SpeechVol_AudioParam.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_param/SpeechVol_AudioParam.xml \
     vendor/infinix/X6837/proprietary/vendor/etc/audio_param/SpeechVol_ParamUnitDesc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_param/SpeechVol_ParamUnitDesc.xml \
     vendor/infinix/X6837/proprietary/vendor/etc/audio_param/Speech_AudioParam.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_param/Speech_AudioParam.xml \
     vendor/infinix/X6837/proprietary/vendor/etc/audio_param/Speech_ParamTreeView.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_param/Speech_ParamTreeView.xml \
@@ -853,7 +854,6 @@ PRODUCT_COPY_FILES += \
     vendor/infinix/X6837/proprietary/vendor/firmware/soc2_2_ram_wifi_1e_1_hdr.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/soc2_2_ram_wifi_1e_1_hdr.bin \
     vendor/infinix/X6837/proprietary/vendor/firmware/soc_fm_v1_coeff.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/soc_fm_v1_coeff.bin \
     vendor/infinix/X6837/proprietary/vendor/firmware/soc_fm_v1_patch.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/soc_fm_v1_patch.bin \
-    vendor/infinix/X6837/proprietary/vendor/firmware/txpowerctrl.cfg:$(TARGET_COPY_OUT_VENDOR)/firmware/txpowerctrl.cfg \
     vendor/infinix/X6837/proprietary/vendor/firmware/wifi.cfg:$(TARGET_COPY_OUT_VENDOR)/firmware/wifi.cfg \
     vendor/infinix/X6837/proprietary/vendor/lib/egl/egl.cfg:$(TARGET_COPY_OUT_VENDOR)/lib/egl/egl.cfg
 
@@ -864,7 +864,7 @@ PRODUCT_PACKAGES += \
     vendor.mediatek.hardware.videotelephony@1.0-impl \
     libAVCSecureVencCA_510 \
     libTransNS \
-    libaedv \
+    libalsautils-v31 \
     libbwc \
     libccci_util \
     libgz_gp_client \
@@ -885,7 +885,7 @@ PRODUCT_PACKAGES += \
     libwo \
     arm.graphics-V1-ndk_platform \
     libmtk_drvb \
-    vendor.mediatek.hardware.videotelephony@1.0 \
+    vendor.mediatek.hardware.videotelephony@1.0_vendor \
     libHEVCdec_sa.ca7.android \
     libh264dec_customize \
     libh264dec_sa.ca7 \
@@ -916,6 +916,7 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss-impl-mediatek \
     android.hardware.gnss@2.1-impl-mediatek \
     audio.primary.mediatek \
+    audio.r_submix.mediatek \
     fpsensor_fingerprint.default \
     gf_fingerprint.default \
     gps.default \
@@ -1164,7 +1165,6 @@ PRODUCT_PACKAGES += \
     libaal_mtk \
     libaibld \
     libaipe_bokeh \
-    libalsautils-v31 \
     libanc_hdr \
     libanc_hdr_adapter_gc32e1_17201856_front_g97 \
     libanc_hdr_adapter_s5khm6sx_17201842_back_g97 \
@@ -1182,6 +1182,7 @@ PRODUCT_PACKAGES += \
     libasn1c_mapi \
     libasn1c_mdmi \
     libaudio_param_parser-vnd \
+    libaudiocompensationfilter_vendor \
     libaudiocompensationfilterc \
     libaudiocomponentengine_vendor \
     libaudiocomponentenginec \
@@ -1299,12 +1300,13 @@ PRODUCT_PACKAGES += \
     libmvpu_runtime_pub \
     libmvpuop_mtk_cv \
     libmvpuop_mtk_nn \
-    libneuron_graph_delegate.mtk \
+    libneuron_graph_delegate.mtk_vendor \
     libnir_neon_driver_ndk.mtk.vndk \
     libnpagent \
     libnpagent_server \
     libnvram \
     libnvram_sec \
+    libnxp_extamp_intf \
     libpixelflinger \
     libpn557_fw \
     libpqframework \
@@ -1317,7 +1319,7 @@ PRODUCT_PACKAGES += \
     libspeechparser_vendor \
     libstorage_otp \
     libsysenv \
-    libtflite_mtk \
+    libtflite_mtk_vendor \
     libtlcWidevineModularDrm \
     libtneclient \
     libtrancamJsonConvertor \
@@ -1655,10 +1657,10 @@ PRODUCT_PACKAGES += \
     s5khm6sx_mipi_raw_tuning \
     libmtkcam_streaminfo_plugin-p1stt \
     vendor.fpsensor.hardware.fpsensorhidlsvc@2.0 \
-    vendor.mediatek.hardware.apuware.apusys@2.0 \
-    vendor.mediatek.hardware.apuware.apusys@2.1 \
-    vendor.mediatek.hardware.apuware.hmp@1.0 \
-    vendor.mediatek.hardware.apuware.utils@2.0 \
+    vendor.mediatek.hardware.apuware.apusys@2.0_vendor \
+    vendor.mediatek.hardware.apuware.apusys@2.1_vendor \
+    vendor.mediatek.hardware.apuware.hmp@1.0_vendor \
+    vendor.mediatek.hardware.apuware.utils@2.0_vendor \
     vendor.mediatek.hardware.audio@7.1 \
     vendor.mediatek.hardware.camera.atms@1.0 \
     vendor.mediatek.hardware.camera.bgservice@1.0 \
@@ -1788,6 +1790,7 @@ PRODUCT_PACKAGES += \
     vendor_lib_libvpudv3a_vcodec_so \
     vendor_lib64_egl_libGLES_mali_so \
     vendor_lib64_hw_audio_primary_mt6789_so \
+    vendor_lib64_hw_audio_r_submix_mt6789_so \
     vendor_lib64_hw_kmsetkey_default_so \
     vendor_lib64_hw_gatekeeper_trustonic_so \
     vendor_lib64_hw_gatekeeper_default_so \

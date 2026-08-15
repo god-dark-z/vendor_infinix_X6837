@@ -7,6 +7,7 @@ soong_namespace {
         "device/infinix/X6837",
         "hardware/mediatek",
         "hardware/mediatek/libmtkperf_client",
+        "hardware/mediatek/libaedv",
     ],
 }
 
@@ -174,7 +175,7 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "libhidlbase",
                 "libfmq",
-                "vendor.mediatek.hardware.videotelephony@1.0",
+                "vendor.mediatek.hardware.videotelephony@1.0_vendor",
                 "libc",
                 "libutils",
                 "libcutils",
@@ -192,7 +193,7 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "libhidlbase",
                 "libfmq",
-                "vendor.mediatek.hardware.videotelephony@1.0",
+                "vendor.mediatek.hardware.videotelephony@1.0_vendor",
                 "libc",
                 "libutils",
                 "libcutils",
@@ -298,7 +299,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libaedv",
+    name: "libalsautils-v31",
     owner: "infinix",
     strip: {
         none: true,
@@ -306,36 +307,32 @@ cc_prebuilt_library_shared {
     target: {
         android_arm: {
             srcs: [
-                "proprietary/vendor/lib/libaedv.so",
+                "proprietary/vendor/lib/libalsautils-v31.so",
             ],
             shared_libs: [
-                "libcutils",
-                "libbase",
-                "libunwindstack",
-                "libselinux",
                 "liblog",
-                "libz",
-                "libc",
-                "libdl",
-                "libm",
+                "libcutils",
+                "libaudioutils",
+                "libtinyalsa",
                 "libc++",
+                "libc",
+                "libm",
+                "libdl",
             ],
         },
         android_arm64: {
             srcs: [
-                "proprietary/vendor/lib64/libaedv.so",
+                "proprietary/vendor/lib64/libalsautils-v31.so",
             ],
             shared_libs: [
-                "libcutils",
-                "libbase",
-                "libunwindstack",
-                "libselinux",
                 "liblog",
-                "libz",
-                "libc",
-                "libdl",
-                "libm",
+                "libcutils",
+                "libaudioutils",
+                "libtinyalsa",
                 "libc++",
+                "libc",
+                "libm",
+                "libdl",
             ],
         },
     },
@@ -1116,7 +1113,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.mediatek.hardware.videotelephony@1.0",
+    name: "vendor.mediatek.hardware.videotelephony@1.0_vendor",
+    stem: "vendor.mediatek.hardware.videotelephony@1.0",
     owner: "infinix",
     strip: {
         none: true,
@@ -1830,8 +1828,8 @@ cc_prebuilt_library_shared {
                 "libcutils",
                 "libhidlmemory",
                 "libfmq",
-                "vendor.mediatek.hardware.apuware.apusys@2.0",
-                "vendor.mediatek.hardware.apuware.apusys@2.1",
+                "vendor.mediatek.hardware.apuware.apusys@2.0_vendor",
+                "vendor.mediatek.hardware.apuware.apusys@2.1_vendor",
                 "android.hidl.allocator@1.0",
                 "android.hidl.memory@1.0",
                 "libc++",
@@ -1863,7 +1861,7 @@ cc_prebuilt_library_shared {
                 "libutils",
                 "libcutils",
                 "libhidlmemory",
-                "vendor.mediatek.hardware.apuware.hmp@1.0",
+                "vendor.mediatek.hardware.apuware.hmp@1.0_vendor",
                 "android.hidl.allocator@1.0",
                 "android.hidl.memory@1.0",
                 "libc++",
@@ -1899,7 +1897,7 @@ cc_prebuilt_library_shared {
                 "libdmabufheap",
                 "libgralloc_extra",
                 "libnativewindow",
-                "vendor.mediatek.hardware.apuware.utils@2.0",
+                "vendor.mediatek.hardware.apuware.utils@2.0_vendor",
                 "libhidlmemory",
                 "android.hidl.memory@1.0",
                 "android.hidl.allocator@1.0",
@@ -2069,6 +2067,36 @@ cc_prebuilt_library_shared {
                 "libTransNS",
                 "libdrm",
                 "libkaraoke",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "audio.r_submix.mediatek",
+    owner: "infinix",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/hw/audio.r_submix.mediatek.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libmedia_helper",
+                "libutils",
+                "libnbaio_mono",
                 "libc++",
                 "libc",
                 "libm",
@@ -8433,34 +8461,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libalsautils-v31",
-    owner: "infinix",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libalsautils-v31.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libaudioutils",
-                "libtinyalsa",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libanc_hdr",
     owner: "infinix",
     strip: {
@@ -8893,6 +8893,33 @@ cc_prebuilt_library_shared {
                 "libbinder",
                 "libaudiocustparam_vendor",
                 "libaudioprimarydevicehalifclient",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libaudiocompensationfilter_vendor",
+    owner: "infinix",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libaudiocompensationfilter_vendor.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "libutils",
                 "libc++",
                 "libc",
                 "libm",
@@ -12278,7 +12305,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libneuron_graph_delegate.mtk",
+    name: "libneuron_graph_delegate.mtk_vendor",
+    stem: "libneuron_graph_delegate.mtk",
     owner: "infinix",
     strip: {
         none: true,
@@ -12294,7 +12322,7 @@ cc_prebuilt_library_shared {
                 "libutils",
                 "libcutils",
                 "libhidlbase",
-                "vendor.mediatek.hardware.apuware.utils@2.0",
+                "vendor.mediatek.hardware.apuware.utils@2.0_vendor",
                 "libc++",
                 "libc",
                 "libm",
@@ -12446,6 +12474,38 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "libcutils",
                 "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libnxp_extamp_intf",
+    owner: "infinix",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libnxp_extamp_intf.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "libutils",
+                "libtinyalsa",
+                "liblog",
+                "libnvram",
+                "libcrypto",
+                "libssl",
+                "libfile_op",
                 "libc++",
                 "libc",
                 "libm",
@@ -12807,7 +12867,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libtflite_mtk",
+    name: "libtflite_mtk_vendor",
+    stem: "libtflite_mtk",
     owner: "infinix",
     strip: {
         none: true,
@@ -23754,7 +23815,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.mediatek.hardware.apuware.apusys@2.0",
+    name: "vendor.mediatek.hardware.apuware.apusys@2.0_vendor",
+    stem: "vendor.mediatek.hardware.apuware.apusys@2.0",
     owner: "infinix",
     strip: {
         none: true,
@@ -23782,7 +23844,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.mediatek.hardware.apuware.apusys@2.1",
+    name: "vendor.mediatek.hardware.apuware.apusys@2.1_vendor",
+    stem: "vendor.mediatek.hardware.apuware.apusys@2.1",
     owner: "infinix",
     strip: {
         none: true,
@@ -23793,7 +23856,7 @@ cc_prebuilt_library_shared {
                 "proprietary/vendor/lib64/vendor.mediatek.hardware.apuware.apusys@2.1.so",
             ],
             shared_libs: [
-                "vendor.mediatek.hardware.apuware.apusys@2.0",
+                "vendor.mediatek.hardware.apuware.apusys@2.0_vendor",
                 "libhidlbase",
                 "liblog",
                 "libutils",
@@ -23811,7 +23874,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.mediatek.hardware.apuware.hmp@1.0",
+    name: "vendor.mediatek.hardware.apuware.hmp@1.0_vendor",
+    stem: "vendor.mediatek.hardware.apuware.hmp@1.0",
     owner: "infinix",
     strip: {
         none: true,
@@ -23839,7 +23903,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.mediatek.hardware.apuware.utils@2.0",
+    name: "vendor.mediatek.hardware.apuware.utils@2.0_vendor",
+    stem: "vendor.mediatek.hardware.apuware.utils@2.0",
     owner: "infinix",
     strip: {
         none: true,
@@ -26504,7 +26569,7 @@ cc_prebuilt_binary {
                 "liblog",
                 "libbase",
                 "libfmq",
-                "vendor.mediatek.hardware.videotelephony@1.0",
+                "vendor.mediatek.hardware.videotelephony@1.0_vendor",
                 "libhardware",
                 "libhwbinder",
                 "libhidlbase",
@@ -27244,6 +27309,13 @@ install_symlink {
     soc_specific: true,
     installed_location: "lib64/hw/audio.primary.mt6789.so",
     symlink_target: "/vendor/lib64/hw/audio.primary.mediatek.so",
+}
+
+install_symlink {
+    name: "vendor_lib64_hw_audio_r_submix_mt6789_so",
+    soc_specific: true,
+    installed_location: "lib64/hw/audio.r_submix.mt6789.so",
+    symlink_target: "/vendor/lib64/hw/audio.r_submix.mediatek.so",
 }
 
 install_symlink {

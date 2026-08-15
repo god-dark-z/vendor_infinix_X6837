@@ -10,7 +10,9 @@
 <virtualSpnOverride mccmncpnn="33450AT&amp;T 4G" name="AT&amp;T 4G"/>
 <virtualSpnOverride mccmncpnn="334050AT&amp;T" name="AT&amp;T"/>
 <virtualSpnOverride mccmncpnn="334050AT&amp;T 4G" name="AT&amp;T 4G"/>
+<virtualSpnOverride mccmncspn="502153UNI5G" name="UNI5G"/>
 <virtualSpnOverride mccmncspn="50503KOGAN" name="KOGAN"/>
 <virtualSpnOverride mccmncpnn="52017K4" name="K4"/>
 <virtualSpnOverride mccmncpnn="334050UNEFON" name="UNEFON"/>
+<virtualSpnOverride mccmncpnn="64003Zantel" name="Yas"/>
 </virtualSpnOverridesByEfPnn>
